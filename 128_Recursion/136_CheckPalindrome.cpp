@@ -1,21 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void checkPalindrome(const string &s, int i, int j)
+bool checkPalindrome(const string &s, int i, int j)
 {
     if (i >= j)
     {
-        cout << "Palindrome";
-        return;
+        return true;
     }
 
     if (s[i] != s[j])
     {
-        cout << "Not a palindrome!";
-        return;
+        return false;
     }
 
-    checkPalindrome(s, i + 1, j - 1);
+    return checkPalindrome(s, i + 1, j - 1);
 }
 
 int main()
@@ -24,7 +22,14 @@ int main()
     cin >> s;
     int n = s.length();
 
-    checkPalindrome(s, 0, n - 1);
+    if (checkPalindrome(s, 0, n - 1))
+    {
+        cout << "Palindrome" << endl;
+    }
+    else
+    {
+        cout << "Not a palindrome!" << endl;
+    }
 
     return 0;
 }
