@@ -8,11 +8,6 @@ long long result(int a, int b)
         return 1;
     }
 
-    if (b == 1)
-    {
-        return a;
-    }
-
     long long ans = result(a, b / 2);
 
     if (b % 2 == 0)
