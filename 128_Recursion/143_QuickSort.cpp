@@ -4,32 +4,35 @@ using namespace std;
 
 int partition(int *arr, int s, int e)
 {
-    int pivot = s;
-    int pos = s;
+    int pivot = arr[s];
+    int cnt = 0;
     for (int i = s + 1; i <= e; i++)
     {
-        if (arr[i] < arr[pivot])
+        if (arr[i] < pivot)
         {
-            pos++;
+            cnt++;
         }
     }
-    swap(arr[pivot], arr[pos]);
+    int pivotIndex = s + cnt;
+    swap(arr[pivotIndex], arr[s]);
     int i = s;
     int j = e;
-    while (i < pos && j > pos)
+    while (i < pivotIndex && j > pivotIndex)
     {
-        if (arr[j] < arr[pos] && arr[i] > arr[pos])
+        while (arr[i] < pivot)
         {
-            swap(arr[i], arr[j]);
             i++;
+        }
+        while (arr[j] > pivot)
+        {
             j--;
         }
-        else if (arr[i] < arr[pos])
-            i++;
-        else if (arr[j] > arr[pos])
-            j--;
+
+        swap(arr[i], arr[j]);
+        i++;
+        j--;
     }
-    return pos;
+    return pivotIndex;
 }
 
 void quickSort(int *arr, int s, int e)
