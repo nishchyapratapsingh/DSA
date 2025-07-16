@@ -28,3 +28,32 @@ public:
         return ans;
     }
 };
+
+//Inorder
+
+class Solution {
+  public:
+    // Function to return a list containing the inorder traversal of the tree.
+    vector<int> inOrder(Node* root) {
+        // Your code here
+        stack<Node*> s;
+        Node* node = root;
+        vector<int> inorderT;
+        
+        while(true) {
+            if (node!=NULL) {
+                s.push(node);
+                node = node->left;
+            }
+            else {
+                if (s.empty()) break;
+                node = s.top();
+                s.pop();
+                inorderT.push_back(node->data);
+                node=node->right;
+            }
+        }
+
+        return inorderT;
+    }
+};
