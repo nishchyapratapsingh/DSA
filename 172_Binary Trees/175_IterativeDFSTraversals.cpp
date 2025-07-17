@@ -57,3 +57,32 @@ class Solution {
         return inorderT;
     }
 };
+
+//Postorder using two stacks
+
+class Solution {
+  public:
+    // Function to return a list containing the postorder traversal of the tree.
+    vector<int> postOrder(Node* root) {
+        // Your code here
+        vector<int> ans;
+        stack<Node*> st;
+        stack<Node*> st2;
+        
+        st.push(root);
+        while (!st.empty()) {
+            Node* node = st.top();
+            st.pop();
+            st2.push(node);
+            if (node->left!=NULL) st.push(node->left);
+            if (node->right!=NULL) st.push(node->right);
+        }
+        
+        while (!st2.empty()) {
+            ans.push_back(st2.top()->data);
+            st2.pop();
+        }
+        
+        return ans;
+    }
+};
