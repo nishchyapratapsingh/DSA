@@ -2,7 +2,16 @@
     "files.associations": {
         "iostream": "cpp",
         "new": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp",
+        "xlocale": "cpp",
+        "algorithm": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xtr1common": "cpp",
+        "xutility": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "github.copilot.enable": {
@@ -10,6 +19,8 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false,
+        "html": false,
+        "css": false,
         "cpp": false
     }
 }
