@@ -21,6 +21,6 @@
         "scminput": false,
         "html": false,
         "css": false,
-        "cpp": false
+        "cpp": true
     }
 }
