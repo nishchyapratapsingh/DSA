@@ -1,4 +1,4 @@
-vector<vector<int>> dfs(int node, vector<vector<int>> &adj, vector<bool> &visited, int c, vector<vector<int>> &res) {
+void dfs(int node, vector<vector<int>> &adj, vector<bool> &visited, int c, vector<vector<int>> &res) {
     visited[node]=true;
     res[c].push_back(node);
     for (auto it: adj[node]) {
@@ -6,7 +6,6 @@ vector<vector<int>> dfs(int node, vector<vector<int>> &adj, vector<bool> &visite
             dfs(it, adj,visited, c, res);
         }
     }
-    return res;
 }
 
 vector<vector<int>> depthFirstSearch(int V, int E, vector<vector<int>> &edges)
